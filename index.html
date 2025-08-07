@@ -9,3 +9,52 @@
     <script src='https://bckn.tensorsolution.in/api/v1/chatbot/VI/03676793-df3e-44fe-8264-13978ab02df1_chatbot_mumbaisuburban_gov_in_important_websites_of_maharashtra_government_.js'></script>
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chatbot Selector</title>
+</head>
+<body>
+
+  <h1>Select a Chatbot</h1>
+
+  <button onclick="loadChatbot('mumbai')">Mumbai Suburban Chatbot</button>
+  <button onclick="loadChatbot('village')">Village Panchayat Chatbot</button>
+  <button onclick="loadChatbot('health')">Health Department Chatbot</button>
+   
+  <div id="chatbot-container"></div>
+
+  <script>
+    let currentScript = null;
+
+    function loadChatbot(type) {
+      const container = document.getElementById('chatbot-container');
+
+      // Remove the existing script if present
+      if (currentScript) {
+        currentScript.remove();
+        currentScript = null;
+      }
+
+      // Create a new script element
+      const script = document.createElement('script');
+
+      if (type === 'village') {
+        script.src = 'https://bckn.tensorsolution.in/api/v1/chatbot/BL/03676793-df3e-44fe-8264-13978ab02df1_chatbot_www_zpkolhapur_gov_in_en_village_panchayatraj_department_.js';
+      } else if (type === 'health') {
+        script.src = 'https://bckn.tensorsolution.in/api/v1/chatbot/BL/03676793-df3e-44fe-8264-13978ab02df1_chatbot_www_zpkolhapur_gov_in_en_health_department_.js';
+      } else if (type === 'mumbai') {
+        script.src = 'https://bckn.tensorsolution.in/api/v1/chatbot/BL/03676793-df3e-44fe-8264-13978ab02df1_chatbot_mumbaisuburban_gov_in_important_websites_of_maharashtra_government_.js';
+      }
+
+      // Append the script to the DOM
+      container.appendChild(script);
+      currentScript = script;
+    }
+  </script>
+
+</body>
+</html>
